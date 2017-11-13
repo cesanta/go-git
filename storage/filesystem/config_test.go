@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/src-d/go-git-fixtures"
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem/internal/dotgit"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/storage/filesystem/internal/dotgit"
 
 	. "gopkg.in/check.v1"
 	"gopkg.in/src-d/go-billy.v3/osfs"

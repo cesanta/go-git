@@ -3,8 +3,8 @@ package object
 import (
 	"bytes"
 
-	"gopkg.in/src-d/go-git.v4/utils/merkletrie"
-	"gopkg.in/src-d/go-git.v4/utils/merkletrie/noder"
+	"github.com/cesanta/go-git/utils/merkletrie"
+	"github.com/cesanta/go-git/utils/merkletrie/noder"
 )
 
 // DiffTree compares the content and mode of the blobs found via two

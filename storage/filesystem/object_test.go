@@ -2,8 +2,8 @@ package filesystem
 
 import (
 	"github.com/src-d/go-git-fixtures"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem/internal/dotgit"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/storage/filesystem/internal/dotgit"
 
 	. "gopkg.in/check.v1"
 )

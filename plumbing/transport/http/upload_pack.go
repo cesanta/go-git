@@ -2,17 +2,17 @@ package http
 
 import (
 	"bytes"
-	"context"
 	"fmt"
+	"golang.org/x/net/context"
 	"io"
 	"net/http"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/pktline"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/internal/common"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/pktline"
+	"github.com/cesanta/go-git/plumbing/protocol/packp"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/internal/common"
+	"github.com/cesanta/go-git/utils/ioutil"
 )
 
 type upSession struct {
@@ -91,7 +91,10 @@ func (s *upSession) doRequest(
 	applyHeadersToRequest(req, content, s.endpoint.Host(), transport.UploadPackServiceName)
 	s.applyAuthToRequest(req)
 
-	res, err := s.client.Do(req.WithContext(ctx))
+	// TODO(dfrank): probably also remove context-taking functions from the
+	// public API, because right now the context is just ignored
+	//res, err := s.client.Do(req.WithContext(ctx))
+	res, err := s.client.Do(req)
 	if err != nil {
 		return nil, plumbing.NewUnexpectedError(err)
 	}

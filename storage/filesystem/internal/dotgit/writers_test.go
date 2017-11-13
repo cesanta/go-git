@@ -12,8 +12,8 @@ import (
 
 	. "gopkg.in/check.v1"
 	"gopkg.in/src-d/go-billy.v3/osfs"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/packfile"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/packfile"
 )
 
 func (s *SuiteDotGit) TestNewObjectPack(c *C) {

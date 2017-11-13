@@ -2,14 +2,14 @@ package git
 
 import (
 	"bytes"
-	"context"
+	"golang.org/x/net/context"
 	"errors"
 	"fmt"
 
 	"gopkg.in/src-d/go-billy.v3"
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/index"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/index"
 )
 
 var (

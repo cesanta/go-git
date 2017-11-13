@@ -10,8 +10,8 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/utils/ioutil"
 
 	"gopkg.in/src-d/go-billy.v3"
 )

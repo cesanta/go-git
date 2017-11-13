@@ -7,11 +7,11 @@ import (
 	"io"
 	"io/ioutil"
 
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/index"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/storage"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/index"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/storage"
 
 	"github.com/src-d/go-git-fixtures"
 	. "gopkg.in/check.v1"

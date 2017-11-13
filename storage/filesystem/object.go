@@ -4,15 +4,15 @@ import (
 	"io"
 	"os"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/cache"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/idxfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/objfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/packfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem/internal/dotgit"
-	"gopkg.in/src-d/go-git.v4/storage/memory"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/cache"
+	"github.com/cesanta/go-git/plumbing/format/idxfile"
+	"github.com/cesanta/go-git/plumbing/format/objfile"
+	"github.com/cesanta/go-git/plumbing/format/packfile"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/storage/filesystem/internal/dotgit"
+	"github.com/cesanta/go-git/storage/memory"
+	"github.com/cesanta/go-git/utils/ioutil"
 
 	"gopkg.in/src-d/go-billy.v3"
 )
@@ -233,7 +233,7 @@ func (s *ObjectStorage) decodeObjectAt(
 	f billy.File,
 	idx *packfile.Index,
 	offset int64) (plumbing.EncodedObject, error) {
-	if _, err := f.Seek(0, io.SeekStart); err != nil {
+	if _, err := f.Seek(0, 1); err != nil {
 		return nil, err
 	}
 
@@ -255,7 +255,7 @@ func (s *ObjectStorage) decodeDeltaObjectAt(
 	idx *packfile.Index,
 	offset int64,
 	hash plumbing.Hash) (plumbing.EncodedObject, error) {
-	if _, err := f.Seek(0, io.SeekStart); err != nil {
+	if _, err := f.Seek(0, 1); err != nil {
 		return nil, err
 	}
 

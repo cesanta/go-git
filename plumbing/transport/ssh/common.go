@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"reflect"
 
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/internal/common"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/internal/common"
 
 	"golang.org/x/crypto/ssh"
 )

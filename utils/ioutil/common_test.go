@@ -2,7 +2,7 @@ package ioutil
 
 import (
 	"bytes"
-	"context"
+	"golang.org/x/net/context"
 	"io/ioutil"
 	"strings"
 	"testing"

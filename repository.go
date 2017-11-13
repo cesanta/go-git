@@ -1,7 +1,7 @@
 package git
 
 import (
-	"context"
+	"golang.org/x/net/context"
 	"errors"
 	"fmt"
 	stdioutil "io/ioutil"
@@ -9,14 +9,14 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/internal/revision"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/storage"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/internal/revision"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/object"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/storage"
+	"github.com/cesanta/go-git/storage/filesystem"
+	"github.com/cesanta/go-git/utils/ioutil"
 
 	"gopkg.in/src-d/go-billy.v3"
 	"gopkg.in/src-d/go-billy.v3/osfs"

@@ -3,10 +3,10 @@ package http
 import (
 	"io/ioutil"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/test"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/protocol/packp"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/test"
 
 	. "gopkg.in/check.v1"
 )

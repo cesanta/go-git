@@ -3,10 +3,10 @@ package revlist
 import (
 	"testing"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/object"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/storage/filesystem"
 
 	"github.com/src-d/go-git-fixtures"
 	. "gopkg.in/check.v1"

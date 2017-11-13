@@ -2,7 +2,7 @@ package git
 
 import (
 	"bytes"
-	"context"
+	"golang.org/x/net/context"
 	"io/ioutil"
 	"os"
 	"path/filepath"
@@ -10,12 +10,12 @@ import (
 
 	"golang.org/x/text/unicode/norm"
 
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/filemode"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/index"
-	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/go-git.v4/storage/memory"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/filemode"
+	"github.com/cesanta/go-git/plumbing/format/index"
+	"github.com/cesanta/go-git/plumbing/object"
+	"github.com/cesanta/go-git/storage/memory"
 
 	"github.com/src-d/go-git-fixtures"
 	. "gopkg.in/check.v1"

@@ -1,8 +1,8 @@
 package server_test
 
 import (
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/test"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/test"
 
 	. "gopkg.in/check.v1"
 )

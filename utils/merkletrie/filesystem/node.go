@@ -5,10 +5,10 @@ import (
 	"os"
 	"path"
 
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/filemode"
+	"github.com/cesanta/go-git/utils/merkletrie/noder"
 	"gopkg.in/src-d/go-billy.v3"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/filemode"
-	"gopkg.in/src-d/go-git.v4/utils/merkletrie/noder"
 )
 
 var ignore = map[string]bool{

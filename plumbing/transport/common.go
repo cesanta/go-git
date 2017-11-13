@@ -13,17 +13,19 @@
 package transport
 
 import (
-	"context"
 	"errors"
 	"fmt"
 	"io"
 	"net/url"
 	"regexp"
 	"strconv"
+	"strings"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp/capability"
+	"golang.org/x/net/context"
+
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/protocol/packp"
+	"github.com/cesanta/go-git/plumbing/protocol/packp/capability"
 )
 
 var (
@@ -138,7 +140,7 @@ type urlEndpoint struct {
 }
 
 func (e urlEndpoint) Protocol() string { return e.URL.Scheme }
-func (e urlEndpoint) Host() string     { return e.URL.Hostname() }
+func (e urlEndpoint) Host() string     { return stripPort(e.URL.Host) }
 
 func (e urlEndpoint) User() string {
 	if e.URL.User == nil {
@@ -148,6 +150,30 @@ func (e urlEndpoint) User() string {
 	return e.URL.User.Username()
 }
 
+func stripPort(hostport string) string {
+	colon := strings.IndexByte(hostport, ':')
+	if colon == -1 {
+		return hostport
+	}
+	if i := strings.IndexByte(hostport, ']'); i != -1 {
+		return strings.TrimPrefix(hostport[:i], "[")
+	}
+	return hostport[:colon]
+}
+
+func portOnly(hostport string) string {
+	colon := strings.IndexByte(hostport, ':')
+	if colon == -1 {
+		return ""
+	}
+	if i := strings.Index(hostport, "]:"); i != -1 {
+		return hostport[i+len("]:"):]
+	}
+	if strings.Contains(hostport, "]") {
+		return ""
+	}
+	return hostport[colon+len(":"):]
+}
 func (e urlEndpoint) Password() string {
 	if e.URL.User == nil {
 		return ""
@@ -158,12 +184,12 @@ func (e urlEndpoint) Password() string {
 }
 
 func (e urlEndpoint) Port() int {
-	p := e.URL.Port()
+	p := portOnly(e.URL.Host)
 	if p == "" {
 		return 0
 	}
 
-	i, err := strconv.Atoi(e.URL.Port())
+	i, err := strconv.Atoi(portOnly(e.URL.Host))
 	if err != nil {
 		return 0
 	}

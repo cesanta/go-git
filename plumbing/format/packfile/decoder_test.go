@@ -6,12 +6,12 @@ import (
 	"gopkg.in/src-d/go-billy.v3/memfs"
 
 	"github.com/src-d/go-git-fixtures"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/idxfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/packfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/storage/filesystem"
-	"gopkg.in/src-d/go-git.v4/storage/memory"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/idxfile"
+	"github.com/cesanta/go-git/plumbing/format/packfile"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/storage/filesystem"
+	"github.com/cesanta/go-git/storage/memory"
 
 	. "gopkg.in/check.v1"
 )

@@ -11,9 +11,9 @@ import (
 	stdioutil "io/ioutil"
 	"sync"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/utils/binary"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/utils/binary"
+	"github.com/cesanta/go-git/utils/ioutil"
 )
 
 var (
@@ -26,6 +26,12 @@ var (
 	ErrUnsupportedVersion = NewError("unsupported packfile version")
 	// ErrSeekNotSupported returned if seek is not support
 	ErrSeekNotSupported = NewError("not seek support")
+)
+
+const (
+	SeekStart   = 0 // seek relative to the origin of the file
+	SeekCurrent = 1 // seek relative to the current offset
+	SeekEnd     = 2 // seek relative to the end
 )
 
 // ObjectHeader contains the information related to the object, this information
@@ -153,7 +159,7 @@ func (s *Scanner) NextObjectHeader() (*ObjectHeader, error) {
 	s.pendingObject = h
 
 	var err error
-	h.Offset, err = s.r.Seek(0, io.SeekCurrent)
+	h.Offset, err = s.r.Seek(0, SeekCurrent)
 	if err != nil {
 		return nil, err
 	}
@@ -312,12 +318,12 @@ func (s *Scanner) SeekFromStart(offset int64) (previous int64, err error) {
 		s.version = VersionSupported
 	}
 
-	previous, err = s.r.Seek(0, io.SeekCurrent)
+	previous, err = s.r.Seek(0, SeekCurrent)
 	if err != nil {
 		return -1, err
 	}
 
-	_, err = s.r.Seek(offset, io.SeekStart)
+	_, err = s.r.Seek(offset, SeekStart)
 	return previous, err
 }
 
@@ -352,9 +358,9 @@ func (r *trackableReader) Read(p []byte) (n int, err error) {
 	return
 }
 
-// Seek only supports io.SeekCurrent, any other operation fails
+// Seek only supports SeekCurrent, any other operation fails
 func (r *trackableReader) Seek(offset int64, whence int) (int64, error) {
-	if whence != io.SeekCurrent {
+	if whence != SeekCurrent {
 		return -1, ErrSeekNotSupported
 	}
 
@@ -374,7 +380,7 @@ type bufferedSeeker struct {
 }
 
 func (r *bufferedSeeker) Seek(offset int64, whence int) (int64, error) {
-	if whence == io.SeekCurrent {
+	if whence == SeekCurrent {
 		current, err := r.r.Seek(offset, whence)
 		if err != nil {
 			return current, err

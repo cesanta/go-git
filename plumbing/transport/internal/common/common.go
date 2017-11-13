@@ -7,7 +7,7 @@ package common
 
 import (
 	"bufio"
-	"context"
+	"golang.org/x/net/context"
 	"errors"
 	"fmt"
 	"io"
@@ -15,12 +15,12 @@ import (
 	"strings"
 	"time"
 
-	"gopkg.in/src-d/go-git.v4/plumbing/format/pktline"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp/capability"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp/sideband"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/plumbing/format/pktline"
+	"github.com/cesanta/go-git/plumbing/protocol/packp"
+	"github.com/cesanta/go-git/plumbing/protocol/packp/capability"
+	"github.com/cesanta/go-git/plumbing/protocol/packp/sideband"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/utils/ioutil"
 )
 
 const (

@@ -4,8 +4,8 @@ import (
 	"bytes"
 	"testing"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/filemode"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/filemode"
 
 	. "gopkg.in/check.v1"
 )

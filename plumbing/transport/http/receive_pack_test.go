@@ -13,8 +13,8 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/test"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/test"
 
 	"github.com/src-d/go-git-fixtures"
 	. "gopkg.in/check.v1"

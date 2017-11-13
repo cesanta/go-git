@@ -5,8 +5,8 @@ import (
 	"io/ioutil"
 
 	"github.com/src-d/go-git-fixtures"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	. "gopkg.in/src-d/go-git.v4/plumbing/format/idxfile"
+	"github.com/cesanta/go-git/plumbing"
+	. "github.com/cesanta/go-git/plumbing/format/idxfile"
 
 	. "gopkg.in/check.v1"
 )

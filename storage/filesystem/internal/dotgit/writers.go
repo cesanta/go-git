@@ -5,10 +5,10 @@ import (
 	"io"
 	"sync/atomic"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/idxfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/objfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/packfile"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/idxfile"
+	"github.com/cesanta/go-git/plumbing/format/objfile"
+	"github.com/cesanta/go-git/plumbing/format/packfile"
 
 	"gopkg.in/src-d/go-billy.v3"
 )
@@ -227,7 +227,7 @@ func (s *syncedReader) sleep() {
 }
 
 func (s *syncedReader) Seek(offset int64, whence int) (int64, error) {
-	if whence == io.SeekCurrent {
+	if whence == 1 {
 		return s.r.Seek(offset, whence)
 	}
 

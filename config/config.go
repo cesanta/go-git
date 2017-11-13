@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"sort"
 
-	format "gopkg.in/src-d/go-git.v4/plumbing/format/config"
+	format "github.com/cesanta/go-git/plumbing/format/config"
 )
 
 const (

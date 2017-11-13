@@ -1,13 +1,13 @@
 package git
 
 import (
-	"context"
+	"golang.org/x/net/context"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 
 	"github.com/src-d/go-git-fixtures"
-	"gopkg.in/src-d/go-git.v4/plumbing"
+	"github.com/cesanta/go-git/plumbing"
 
 	. "gopkg.in/check.v1"
 )

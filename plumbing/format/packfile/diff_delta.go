@@ -5,7 +5,7 @@ import (
 	"hash/adler32"
 	"io/ioutil"
 
-	"gopkg.in/src-d/go-git.v4/plumbing"
+	"github.com/cesanta/go-git/plumbing"
 )
 
 // See https://github.com/jelmer/dulwich/blob/master/dulwich/pack.py and

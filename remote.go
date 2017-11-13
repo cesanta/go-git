@@ -1,25 +1,25 @@
 package git
 
 import (
-	"context"
+	"golang.org/x/net/context"
 	"errors"
 	"fmt"
 	"io"
 
-	"gopkg.in/src-d/go-git.v4/config"
-	"gopkg.in/src-d/go-git.v4/plumbing"
-	"gopkg.in/src-d/go-git.v4/plumbing/format/packfile"
-	"gopkg.in/src-d/go-git.v4/plumbing/object"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp/capability"
-	"gopkg.in/src-d/go-git.v4/plumbing/protocol/packp/sideband"
-	"gopkg.in/src-d/go-git.v4/plumbing/revlist"
-	"gopkg.in/src-d/go-git.v4/plumbing/storer"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport"
-	"gopkg.in/src-d/go-git.v4/plumbing/transport/client"
-	"gopkg.in/src-d/go-git.v4/storage"
-	"gopkg.in/src-d/go-git.v4/storage/memory"
-	"gopkg.in/src-d/go-git.v4/utils/ioutil"
+	"github.com/cesanta/go-git/config"
+	"github.com/cesanta/go-git/plumbing"
+	"github.com/cesanta/go-git/plumbing/format/packfile"
+	"github.com/cesanta/go-git/plumbing/object"
+	"github.com/cesanta/go-git/plumbing/protocol/packp"
+	"github.com/cesanta/go-git/plumbing/protocol/packp/capability"
+	"github.com/cesanta/go-git/plumbing/protocol/packp/sideband"
+	"github.com/cesanta/go-git/plumbing/revlist"
+	"github.com/cesanta/go-git/plumbing/storer"
+	"github.com/cesanta/go-git/plumbing/transport"
+	"github.com/cesanta/go-git/plumbing/transport/client"
+	"github.com/cesanta/go-git/storage"
+	"github.com/cesanta/go-git/storage/memory"
+	"github.com/cesanta/go-git/utils/ioutil"
 )
 
 var (

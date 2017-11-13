@@ -3,7 +3,7 @@ package ioutil
 
 import (
 	"bufio"
-	"context"
+	"golang.org/x/net/context"
 	"errors"
 	"io"
 
